@@ -4,7 +4,7 @@ import base from './webpack.base.config'
 base.devtool = 'source-map'
 base.entry = [
   'react-hot-loader/patch',
-  'webpack-hot-middleware/client'
+  'webpack-hot-middleware/client',
 ].concat(base.entry)
 
 base.plugins = base.plugins.concat([

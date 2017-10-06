@@ -10,4 +10,6 @@ const Windowing = () => (
   />
 )
 
+//document.querySelectorAll('li').length
+
 export default Windowing

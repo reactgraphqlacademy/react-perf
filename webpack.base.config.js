@@ -20,7 +20,7 @@ module.exports = {
   ],
   resolve: {
     extensions: ['', '.js', '.jsx'],
-    fallback: ['./node_modules']
+    fallback: ['./node_modules'],
   },
   module: {
     loaders: [

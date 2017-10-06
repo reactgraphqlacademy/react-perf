@@ -2,12 +2,6 @@ import React from 'react'
 
 class Todo extends React.Component{
 
-
-  shouldComponentUpdate(nextProps) {
-    return nextProps.text !== this.props.text
-  }
-
-
   render() {
     return (
       <li className="media" style={{ borderBottom: '1px solid #ccc' }}>

@@ -10,7 +10,7 @@ const compiler = webpack(config)
 
 app.use(devMiddleware(compiler, {
   publicPath: config.output.publicPath,
-  historyApiFallback: true
+  historyApiFallback: true,
 }))
 
 app.use(hotMiddleware(compiler))

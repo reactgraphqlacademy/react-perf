@@ -42,7 +42,7 @@ class TodoList extends React.Component{
     return (
       <div>
         <form style={{ paddingTop: '20px', paddingBottom: '10px' }} onSubmit={this.handleSubmit}>
-          <h2>Example ({NUM_ITEMS} items)</h2>
+          <h2>Todo 1 ({NUM_ITEMS} items)</h2>
           <h3>New task</h3>
           <input ref="input" className="form-control"/>
         </form>

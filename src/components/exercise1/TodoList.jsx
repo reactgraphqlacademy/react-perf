@@ -21,10 +21,18 @@ class TodoList extends React.Component{
   }
 
   updateItem = (item, isDone) => {
-    // https://facebook.github.io/react/docs/react-component.html#forceupdate
-  }
+     item.isDone = isDone
 
-  handleSubmit = (e) => {
+     Perf.start()
+
+     this.forceUpdate(() => {
+       Perf.stop()
+       //Perf.printWasted()
+       Perf.printInclusive()
+     })
+   }
+
+   handleSubmit = (e) => {
      e.preventDefault()
 
      const item = {
@@ -46,15 +54,15 @@ class TodoList extends React.Component{
      })
    }
 
-  componentDidMount() {
+   componentDidMount() {
      this.input.focus()
-  }
+   }
 
-  render() {
+   render() {
      return (
        <div>
          <form style={{ paddingTop: '20px', paddingBottom: '10px' }} onSubmit={this.handleSubmit}>
-           <h2>Exercise 1 ({NUM_ITEMS} items)</h2>
+           <h2>Todo 2 ({NUM_ITEMS} items)</h2>
            <h3>New task</h3>
            <input ref={ node => this.input = node } className="form-control"/>
          </form>

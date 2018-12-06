@@ -4,7 +4,7 @@ import List from './List'
 
 const Windowing = () => (
   <List
-    numRows={500}
+    numRows={5000000}
     rowHeight={rowHeight}
     renderRowAtIndex={renderRowAtIndex}
   />

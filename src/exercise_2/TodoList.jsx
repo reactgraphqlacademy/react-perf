@@ -1,23 +1,18 @@
 import React from "react";
 import Todo from "./Todo";
+import TodoForm from "./TodoForm";
 import { convertNumberToEnglish, createRange } from "../utils";
 
-const NUM_ITEMS = 100;
+const NUM_ITEMS = 2000;
 let guid = 0;
 
 class TodoList extends React.Component {
   state = {
     items: createRange(NUM_ITEMS).map(n => ({
       id: ++guid,
-      text: convertNumberToEnglish(n + 1)
+      text: `Task ${convertNumberToEnglish(n + 1)}`
     })),
     inputValue: ""
-  };
-
-  handleInputChange = e => {
-    this.setState({
-      inputValue: e.target.value
-    });
   };
 
   handleSubmit = e => {
@@ -35,26 +30,16 @@ class TodoList extends React.Component {
   };
 
   render() {
-    const { handleInputChange, handleSubmit } = this;
-    const { inputValue, items } = this.state;
+    const { handleSubmit } = this;
+    const { items } = this.state;
 
     return (
       <div style={{ width: "600px", margin: "0 auto" }}>
         <h2>Todo 1 ({NUM_ITEMS} items)</h2>
-        <form
-          style={{ paddingTop: "20px", paddingBottom: "10px" }}
-          onSubmit={handleSubmit}
-        >
-          <h3>New task</h3>
-          <input
-            value={inputValue}
-            onChange={handleInputChange}
-            className="form-control"
-          />
-        </form>
+        <TodoForm handleSubmit={handleSubmit} />
         <ul className="list-unstyled">
           {items.map(item => (
-            <Todo key={item.id} text={item.text} />
+            <Todo key={item.id} data={item} />
           ))}
         </ul>
       </div>

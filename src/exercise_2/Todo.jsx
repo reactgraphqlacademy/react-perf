@@ -1,9 +1,12 @@
 import React from "react";
 
 class Todo extends React.Component {
+  // shouldComponentUpdate(previousProps) {
+  //   previousProps.
+  // }
   render() {
     const {
-      data: { text }
+      data: { text, users }
     } = this.props;
 
     return (

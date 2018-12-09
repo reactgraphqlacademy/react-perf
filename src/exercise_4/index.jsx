@@ -18,7 +18,7 @@ const Windowing = () => (
       />
     </div>
     <List
-      numRows={500}
+      numRows={500000}
       rowHeight={rowHeight}
       renderRowAtIndex={renderRowAtIndex}
     />

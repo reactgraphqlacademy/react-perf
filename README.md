@@ -35,7 +35,8 @@ Refactor the code of src/example_2 to make the list more performant
 
 ### Exercise 3
 
-- Refactor the code of src/example_3 to make the list more performant
+- Refactor the code of src/example_3 to make the list more performant by using a React.PureComponent
+- Fix the removeUserFromTodo from src/example_3/TodoList.jsx by avoiding array mutations
 - Refactor the code in src/example_3/Todo to use React.memo instead of React.PureComponent
 
 ### Exercise 4

@@ -1,16 +1,21 @@
 import React from "react";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
-import { convertNumberToEnglish, createRange } from "../utils";
+import {
+  convertNumberToEnglish,
+  createRange,
+  createRandomUsers
+} from "../utils";
 
-const NUM_ITEMS = 100;
+const NUM_ITEMS = 1000;
 let guid = 0;
 
 class TodoList extends React.Component {
   state = {
     items: createRange(NUM_ITEMS).map(n => ({
       id: ++guid,
-      text: convertNumberToEnglish(n + 1)
+      text: `Task ${convertNumberToEnglish(n + 1)}`,
+      users: createRandomUsers()
     })),
     inputValue: ""
   };
@@ -20,7 +25,8 @@ class TodoList extends React.Component {
 
     const item = {
       id: ++guid,
-      text: e.target.elements[0].value
+      text: e.target.elements[0].value,
+      users: createRandomUsers()
     };
 
     this.setState(state => ({
@@ -29,8 +35,16 @@ class TodoList extends React.Component {
     }));
   };
 
+  removeUserFromTodo = ({ userId, todoId }) => {
+    this.setState(state => {
+      return {
+        ...state
+      };
+    });
+  };
+
   render() {
-    const { handleSubmit } = this;
+    const { handleSubmit, removeUserFromTodo } = this;
     const { items } = this.state;
 
     return (
@@ -39,7 +53,11 @@ class TodoList extends React.Component {
         <TodoForm handleSubmit={handleSubmit} />
         <ul className="list-unstyled">
           {items.map(item => (
-            <Todo key={item.id} text={item.text} />
+            <Todo
+              removeUserFromTodo={removeUserFromTodo}
+              key={item.id}
+              data={item}
+            />
           ))}
         </ul>
       </div>

@@ -1,13 +1,9 @@
 import React from "react";
 import Todo from "./Todo";
 import TodoForm from "./TodoForm";
-import {
-  convertNumberToEnglish,
-  createRange,
-  createRandomUsers
-} from "../utils";
+import { convertNumberToEnglish, createRange } from "../utils";
 
-const NUM_ITEMS = 1000;
+const NUM_ITEMS = 2000;
 let guid = 0;
 
 class TodoList extends React.Component {

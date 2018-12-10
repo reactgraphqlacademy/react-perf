@@ -1,11 +1,6 @@
 import React from "react";
 
-// https://rickandmortyapi.com/api/character/avatar/20.jpeg
-
 class Todo extends React.Component {
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   return nextProps.id !== this.props.id;
-  // }
   render() {
     return (
       <li className="media" style={{ borderBottom: "1px solid #ccc" }}>

@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Exercise2 from "./exercise2";
-import Example1 from "./example_1_solution/TodoList";
-import Example2 from "./example_2/TodoList";
-import Example3 from "./example_3/TodoList";
-import Example4 from "./example_4";
+import Exercise1 from "./exercise_1/TodoList";
+import Exercise2 from "./exercise_2/TodoList";
+import Exercise3 from "./exercise_3/TodoList";
+import Exercise4 from "./exercise_4";
 
 import "./App.css";
 
@@ -28,24 +27,24 @@ class App extends Component {
             render={() => (
               <ul>
                 <li>
-                  <Link to="/example_1">Example 1</Link>
+                  <Link to="/exercise_1">Exercise 1</Link>
                 </li>
                 <li>
-                  <Link to="/example_2">Example 2</Link>
+                  <Link to="/exercise_2">Exercise 2</Link>
                 </li>
                 <li>
-                  <Link to="/example_3">Example 3</Link>
+                  <Link to="/exercise_3">Exercise 3</Link>
                 </li>
                 <li>
-                  <Link to="/example_4">Example 4</Link>
+                  <Link to="/exercise_4">Exercise 4</Link>
                 </li>
               </ul>
             )}
           />
-          <Route path="/example_1" component={Example1} />
-          <Route path="/example_2" component={Example2} />
-          <Route path="/example_3" component={Example3} />
-          <Route path="/example_4" component={Example4} />
+          <Route path="/exercise_1" component={Exercise1} />
+          <Route path="/exercise_2" component={Exercise2} />
+          <Route path="/exercise_3" component={Exercise3} />
+          <Route path="/exercise_4" component={Exercise4} />
         </React.Fragment>
       </Router>
     );

@@ -8,13 +8,14 @@ class List extends React.Component {
       availableHeight: 0,
       scrollTop: 0
     };
+    this.wrapper = React.createRef();
   }
 
   componentDidMount() {
-    console.log("clientHeight", this.wrapper.clientHeight);
+    console.log("clientHeight", this.wrapper.current.clientHeight);
 
     this.setState({
-      availableHeight: this.wrapper.clientHeight
+      availableHeight: this.wrapper.current.clientHeight
     });
   }
 
@@ -38,6 +39,8 @@ class List extends React.Component {
     );
 
     const items = [];
+    // TODO the padding top should be a dynamic value
+    const paddingTop = 0;
 
     let index = startIndex;
     while (index < endIndex) {
@@ -48,12 +51,12 @@ class List extends React.Component {
     return (
       <div
         style={{ height: "100%", overflowY: "scroll" }}
-        ref={node => (this.wrapper = node)}
+        ref={this.wrapper}
         onScroll={this.handleScroll}
       >
         <ol
           style={{
-            paddingTop: startIndex * rowHeight,
+            paddingTop,
             pointerEvents: "none",
             height: totalHeight
           }}

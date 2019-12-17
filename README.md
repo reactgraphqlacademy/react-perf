@@ -5,7 +5,7 @@ This repo contains some exercises to help you learn some performance optimizatio
 
 ## How to install
 
-- `git clone git@github.com:leanjscom/react-perf.git`
+- `git clone git@github.com:reactgraphqlacademy/react-perf.git`
 - `cd exercise-perf`
 - `npm i`
 - `npm start`

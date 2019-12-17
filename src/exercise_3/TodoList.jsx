@@ -36,11 +36,14 @@ class TodoList extends React.Component {
   };
 
   removeUserFromTodo = ({ userId, todoId }) => {
-    this.setState(state => {
-      return {
-        ...state
-      };
+    // is there an issue in the following code?
+    const todos = this.state.items.map(item => {
+      if (item.id === todoId) {
+        item.users = item.users.filter(user => user.id !== userId);
+      }
+      return item;
     });
+    this.setState(todos);
   };
 
   render() {
